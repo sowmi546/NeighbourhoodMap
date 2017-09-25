@@ -39,7 +39,7 @@ function viewModel()
 this.setInfo = function(){
    self.populateInfoWindow(this, self.largeInfoWindow);
 
-}
+};
 this.populateInfoWindow = function(marker,infowindow){
 
        // Check to make sure the infowindow is not already opened on this marker.
@@ -75,7 +75,7 @@ this.populateInfoWindow = function(marker,infowindow){
              infowindow.setContent('<div>' + marker.title + '</div>' +
                '<div>No Street View Found</div>');
            }
-         }
+         };
          // Use streetview service to get the closest streetview image within
          // 50 meters of the markers position
          streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
@@ -85,9 +85,6 @@ this.populateInfoWindow = function(marker,infowindow){
  };
  this.largeInfoWindow = new google.maps.InfoWindow();
 
-                //  this.marker.addListener('click', function() {
-                //    self.populateInfoWindow(this, self.largeInfoWindow);
-                //  });
  for (var i = 0; i < locations.length; i++) {
              this.markerTitle = locations[i].title;
              this.markerLat = locations[i].lat;
@@ -108,10 +105,7 @@ this.populateInfoWindow = function(marker,infowindow){
              this.marker.setMap(map);
              markers.push(this.marker);
              this.marker.addListener('click',self.setInfo);
-                //
-                // this.marker.addListener('click', function() {
-                //   self.populateInfoWindow(this, self.largeInfoWindow);
-                // });
+
 
 }
 this.myLocationsFilter = ko.computed(function() {
