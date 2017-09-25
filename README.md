@@ -1,4 +1,4 @@
-##Neighbourhood Map ##
+## Neighbourhood Map
 
 
 This project is the part of the Udacity Fullstack nanodegree program
