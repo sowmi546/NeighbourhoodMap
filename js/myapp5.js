@@ -36,7 +36,10 @@ function viewModel()
      zoom: 12,
      center: {lat: 47.605999, lng: -122.335208}
  });
+this.setInfo = function(){
+   self.populateInfoWindow(this, self.largeInfoWindow);
 
+}
 this.populateInfoWindow = function(marker,infowindow){
 
        // Check to make sure the infowindow is not already opened on this marker.
@@ -53,7 +56,7 @@ this.populateInfoWindow = function(marker,infowindow){
          // In case the status is OK, which means the pano was found, compute the
          // position of the streetview image, then calculate the heading, then get a
          // panorama from that and set the options
-         function getStreetView(data, status) {
+          var getStreetView = function(data, status) {
            if (status == google.maps.StreetViewStatus.OK) {
              var nearStreetViewLocation = data.location.latLng;
              var heading = google.maps.geometry.spherical.computeHeading(
@@ -79,9 +82,12 @@ this.populateInfoWindow = function(marker,infowindow){
          // Open the infowindow on the correct marker.
          infowindow.open(map, marker);
        }
- }
+ };
  this.largeInfoWindow = new google.maps.InfoWindow();
 
+                //  this.marker.addListener('click', function() {
+                //    self.populateInfoWindow(this, self.largeInfoWindow);
+                //  });
  for (var i = 0; i < locations.length; i++) {
              this.markerTitle = locations[i].title;
              this.markerLat = locations[i].lat;
@@ -101,25 +107,25 @@ this.populateInfoWindow = function(marker,infowindow){
              });
              this.marker.setMap(map);
              markers.push(this.marker);
-
-                this.marker.addListener('click', function() {
-                  self.populateInfoWindow(this, self.largeInfoWindow);
-                });
-
-                this.myLocationsFilter = ko.computed(function() {
-                   var result = [];
-                   for (var i = 0; i < markers.length; i++) {
-                         var markerLocation = markers[i];
-                   if (markerLocation.title.toLowerCase().includes(this.searchPlace().toLowerCase())) {
-                      result.push(markerLocation);
-                      markers[i].setVisible(true);
-                  } else {
-                      markers[i].setVisible(false);
-                  }
-                  }
-                  return result;
-                }, this);
+             this.marker.addListener('click',self.setInfo);
+                //
+                // this.marker.addListener('click', function() {
+                //   self.populateInfoWindow(this, self.largeInfoWindow);
+                // });
 
 }
+this.myLocationsFilter = ko.computed(function() {
+   var result = [];
+   for (var i = 0; i < markers.length; i++) {
+         var markerLocation = markers[i];
+   if (markerLocation.title.toLowerCase().includes(this.searchPlace().toLowerCase())) {
+      result.push(markerLocation);
+      markers[i].setVisible(true);
+  } else {
+      markers[i].setVisible(false);
+  }
+  }
+  return result;
+}, this);
 
 }
