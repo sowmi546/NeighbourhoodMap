@@ -2,8 +2,9 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="=width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
      <style>
       html,
       body {
@@ -54,22 +55,23 @@
   </head>
   <body>
     <div class="container">
-     <div class="options-box">
-       <h1>Favorite places in Seattle</h1>
+      <div class="options-box">
+        <h1>Favorite places in Seattle</h1>
 
-                     <!-- Search Input -->
-                     <input class="search" data-bind="textInput: searchPlace, valueUpdate: 'afterkeydown'" placeholder="Search Locations">
+                      <!-- Search Input -->
+                      <input class="search" data-bind="textInput: searchPlace, valueUpdate: 'afterkeydown'" placeholder="Search Locations">
 
-                     <ul data-bind="foreach: myLocationsFilter">
+                      <ul data-bind="foreach: myLocationsFilter">
 
-                      <li data-bind="text: title, click: $parent.populateInfoWindow"></li>
+                       <li data-bind="text: title, click: $parent.populateInfoWindow"></li>
 
-                     </ul>
-                 </nav>
-     </div>
+                      </ul>
+                  </nav>
+      </div>
 
-     <div id="map"></div>
-   </div>
+      <div id="map"></div>
+    </div>
+
 
 
 <script src="js/lib/knockout-3.2.0.js"></script>
