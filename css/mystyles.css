@@ -9,4 +9,8 @@
   #map {
     height: 100%;
   }
+  @media (max-width: 768px) {
+    #main-title {
+        width: 30px;
+    }
 </style>
