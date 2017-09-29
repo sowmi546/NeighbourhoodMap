@@ -12,14 +12,6 @@ var locations = [
 
     ];
 
-function initMap() {
-    "use strict";
-    ko.applyBindings(new viewModel());
-}
-function mapError() {
-    "use strict";
-    alert("Google Maps has failed to load. Please try later");
-}
 var FavPlace = function (data) {
         "use strict";
         var self = this;
@@ -140,7 +132,15 @@ function viewModel() {
         return result;
       }, this);
 
-      }
+}
+function initMap() {
+    "use strict";
+    ko.applyBindings(new viewModel());
+}
+function mapError() {
+    "use strict";
+    alert("Google Maps has failed to load. Please try later");
+}
 
 
 
