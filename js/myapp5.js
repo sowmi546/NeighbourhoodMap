@@ -16,7 +16,7 @@
           ko.applyBindings(new viewModel());
 
       }
-      function errorHandling() {
+      function mapError() {
 	       alert("Google Maps has failed to load. Please try later");
       }
       var FavPlace = function(data){
