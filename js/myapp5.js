@@ -16,6 +16,9 @@
           ko.applyBindings(new viewModel());
 
       }
+      function errorHandling() {
+	       alert("Google Maps has failed to load. Please try later");
+      }
       var FavPlace = function(data){
          var self = this;
          self.name = ko.observable(data.title);
@@ -137,3 +140,6 @@
       }, this);
 
       }
+
+
+
