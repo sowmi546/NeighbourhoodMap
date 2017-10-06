@@ -1,64 +1,17 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="css/mystyles.css">
 
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-     <style>
-      html,
-      body {
-        font-family: Arial, sans-serif;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        height: 100%;
-        position: relative;
-      }
-      input {
-        font-size: 12px;
-      }
-      h1 {
-        color: #525454;
-        font-size: 22px;
-        margin: 0 0 10px 0;
-        text-align: center;
-      }
-
-      #map {
-        bottom:0px;
-        height: 100%;
-        left: 35%;
-        position: absolute;
-        right: 0px;
-      }
-      .options-box {
-        background: #fff;
-        border: 1px solid #999;
-        border-radius: 3px;
-        height: 100%;
-        line-height: 35px;
-        padding: 10px 10px 30px 10px;
-        text-align: left;
-        width: 340px;
-      }
-      #pano {
-        width: 200px;
-        height: 200px;
-      }
-      .text {
-        font-size: 12px;
-      }
-    </style>
-     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-inverse">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#myNavbar">
@@ -77,25 +30,25 @@
               <input class="search" data-bind="textInput: searchPlace, valueUpdate: 'afterkeydown'" placeholder="Search Locations">
 
 
-              <ul data-bind="foreach: myLocationsFilter">
-              <li data-bind="text: title, click: $parent.setInfo"></li><br>
-            </ul>
-          </div>
+              <ul data-bind="foreach: myLocationsFilter" id="mylist">
+                <li data-bind="text: title, click: $parent.setInfo"></li><br>
+              </ul>
+            </div>
           </li>
         </ul>
       </div>
     </div>
-</nav>
-<div id="map"></div>
-  </div>
+  </nav>
+  <div id="map"></div>
+</div>
 
 
 <script src="js/lib/knockout-3.2.0.js"></script>
-    <script src="js/myapp5.js"></script>
+<script src="js/myapp5.js"></script>
 
-    <script async defer
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsCxyFZAU-b3YEkaYNnydmjY-Mdh6bcc0&v=3&libraries=places&callback=initMap" onerror="mapError()">
-    </script>
+<script async defer
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBsCxyFZAU-b3YEkaYNnydmjY-Mdh6bcc0&v=3&libraries=places&callback=initMap" onerror="mapError()">
+</script>
 
-  </body>
+</body>
 </html>
