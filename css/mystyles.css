@@ -33,6 +33,11 @@
       }
 
   }
+  nav{
+    left:0;
+    position: absolute;
+    width: 35%;
+  }
 
     .container {
       height: 100%;
