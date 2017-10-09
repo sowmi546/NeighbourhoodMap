@@ -13,10 +13,27 @@
     position: absolute;
     right: 0px;
   }
+  #myNavbar{
+    color:#bd1d1d;
+  }
   @media (max-width: 768px) {
     #main-title {
         width: 30px;
     }
+
+  }
+  @media (max-width:726px) {
+    /*.dropdown-menu{
+      /*width: 20px; !important
+      overflow: scroll;
+      min-width:160px;
+    }*/
+    #eachElement {
+        overflow: scroll;
+      }
+
+  }
+
     .container {
       height: 100%;
       position: relative;
@@ -49,8 +66,9 @@
         font-size: 12px;
       }
 
-        #mylist{
+      #mylist {
           padding-top: 30px;
           color:#bd1d1d;
-        }
+      }
+
 </style>
